@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`w-full h-[5rem] bg-slate-50 shadow-gray-500 drop-shadow-md ${
+      className={`fixed top-0 z-50 w-full h-[5rem] bg-slate-50 shadow-gray-500 drop-shadow-md ${
         isDarkMode ? "dark:bg-gray-800 dark:shadow-gray-50 dark:drop-shadow-md" : ""
       }`}
     >
