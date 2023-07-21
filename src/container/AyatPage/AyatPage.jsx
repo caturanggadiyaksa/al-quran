@@ -1,7 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import Ayat from '../../component/ayat/ayat';
 import { useParams } from 'react-router-dom';
-
+import NotFound from '../NotFound';
+import SidebarPage from '../SidebarPage/SidebarPage';
 const AyatPage = () => {
 
   const { surah_number } = useParams();
@@ -28,12 +29,19 @@ const AyatPage = () => {
   }, []);
 
  
-    
+    // Tambahkan pengecekan apakah `surah_number` adalah angka
+    // Jika tidak, tampilkan halaman "not found"
+    const isValidSurahNumber = !isNaN(parseInt(surah_number));
+    if (!isValidSurahNumber) {
+      return <NotFound />; // Pastikan Anda memiliki komponen NotFound yang sesuai diimpor di sini
+    }
+
     return (
       
       <>
-      <div className='min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-800'>
-        <div className='m-4 '>
+      <SidebarPage />
+      <div className='min-h-screen pl-[16rem] overflow-hidden bg-gray-50 dark:bg-gray-800'>
+        <div className='m-4 pt-[6rem]'>
           {surah.map((surahItem) => (
             <div key={surahItem.id}>
               <h2 className='m-4 text-gray-800 dark:text-gray-100'>{surahItem.id === parseInt(surah_number) ? surahItem.name : null}</h2>
