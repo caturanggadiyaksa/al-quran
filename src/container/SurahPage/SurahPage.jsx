@@ -45,7 +45,7 @@ class SurahPage extends React.Component {
         return (
           <>
             <div className="min-h-screen bg-gray-50 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-800">
-              <div className="grid grid-cols-4 gap-4 justify-center mx-4">
+              <div className="pt-[6rem] grid grid-cols-4 gap-4 justify-center mx-4">
               {/* <Router>
              
               <Routes>
