@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Helmet } from 'react-helmet';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
   <React.StrictMode>
+    <Helmet>
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css"
+      />
+      
+    </Helmet>
+    
     <App />
   </React.StrictMode>
 );
