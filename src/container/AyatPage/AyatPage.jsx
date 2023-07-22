@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import Ayat from '../../component/ayat/ayat';
 import { useParams } from 'react-router-dom';
 import NotFound from '../NotFound';
-import SidebarPage from '../SidebarPage/SidebarPage';
+// import SidebarPage from '../SidebarPage/SidebarPage';
 const AyatPage = () => {
 
   const { surah_number } = useParams();
@@ -11,7 +11,7 @@ const AyatPage = () => {
 
   useEffect(() => {
     const apiKey = 'lcjYVLBQPueQNxivzTEeRgV7Kj9LN44NFg8chnal';
-    const apiUrl = 'http://127.0.0.1:8000/api/quran';
+    const apiUrl = 'https://api-quran.tretasoft.com/api/quran';
 
     fetch(apiUrl, {
       headers: {
@@ -39,8 +39,8 @@ const AyatPage = () => {
     return (
       
       <>
-      <SidebarPage />
-      <div className='min-h-screen pl-[16rem] overflow-hidden bg-gray-50 dark:bg-gray-800'>
+      {/* <SidebarPage /> */}
+      <div className='min-h-screen lg:pl-[12rem] xl:pl-[16rem] overflow-hidden bg-gray-50 dark:bg-gray-800'>
         <div className='m-4 pt-[6rem]'>
           {surah.map((surahItem) => (
             <div key={surahItem.id}>
