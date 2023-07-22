@@ -7,61 +7,82 @@ class SurahPage extends React.Component {
 
   constructor(props) {
     super(props);
-
-    // Setel state awal jika komponen Anda memiliki state
     this.state = {
-      // nilai state awal Anda di sini
-      surah: []
+      surah: null,
+      isLoading: true,
     };
   }
 
     componentDidMount() {
       const apiKey = 'lcjYVLBQPueQNxivzTEeRgV7Kj9LN44NFg8chnal'; // Ganti YOUR_API_KEY dengan API key yang diberikan oleh penyedia API Anda
-      const apiUrl = 'http://127.0.0.1:8000/api/quran';
+      const apiUrl = 'https://api-quran.tretasoft.com/api/quran';
       
-      fetch(apiUrl, {
-        headers: {
-          'API-Key': apiKey
-        }
-      })
 
-      .then(res => res.json())
-      .then(data => {
-        // Lakukan sesuatu dengan data yang diterima dari API
+      // Check if data exists in Local Storage
+      const storedQuranData = localStorage.getItem('surah');
+
+      if (storedQuranData) {
+        // If data exists, parse and use it
         this.setState({
-          surah: data
+          surah: JSON.parse(storedQuranData),
+          isLoading: false,
+        });
+      } else {
+        fetch(apiUrl, {
+          headers: {
+            'API-Key': apiKey
+          }
         })
-        console.log(data);
-      })
-      
-      .catch(error => {
-        // Tangani kesalahan jika ada
-        console.error('Error:', error);
-      });
+  
+        .then(res => res.json())
+        .then(data => {
+
+          localStorage.setItem('surah', JSON.stringify(data));
+          this.setState({
+            surah: data,
+            isLoading: false,
+          });
+          
+          
+        })
+        
+        .catch(error => {
+          // Tangani kesalahan jika ada
+          console.error('Error:', error);
+        });
+
+      }
+     
     }
     
     
     render() {
+      const { surah, isLoading } = this.state;
         return (
           <>
-            <div className="min-h-screen bg-gray-50 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-800">
-              <div className="pt-[6rem] grid grid-cols-4 gap-4 justify-center mx-4">
-              {/* <Router>
-             
-              <Routes>
-                <Route path="/:surah_number" element={<AyatPage />} />
-              </Routes> */}
+           
 
+              {isLoading ? (
+                <div>Loading...</div>
+              ) : surah ? (
+                // Render Quran data here
+                <div className="min-h-screen bg-gray-50 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-800">
+                  <div className="pt-[6rem] grid grid-cols-1 gap-1 justify-center mx-4 md:grid md:grid-cols-2 md:gap-2 xl:grid xl:grid-cols-3 xl:gap-3">
              
-              {this.state.surah.map((surah) => (
-                <Card key={surah.id} judul={surah.name} arti={surah.arti} asma={surah.asma} surahNumber={surah.id} />
-              ))}
-            {/* </Router> */}
+                   {this.state.surah.map((surah) => (
+                      <Card key={surah.id} judul={surah.name} arti={surah.arti} asma={surah.asma} surahNumber={surah.id} />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div>Data not available.</div>
+              )}
+             
+        
                   
              
               
-              </div>
-            </div>
+             
            
           </>
             
