@@ -49,11 +49,14 @@ const Navbar = () => {
         <div className="h-[5rem] w-1/5 sm:w-1/2 sm:text-sm lg:text-lg lg:w-1/4 sm:left-4 ml-4">
           <div className="flex items-center">
 
-            
-            <h2 className="text-slate-800 font-bold uppercase py-8 dark:text-gray-200">
-              Al{" "}
-              <span className="text-violet-700 dark:text-violet-500">Quran</span>
-            </h2>
+            <a href='/'> 
+              <h2 className="text-slate-800 font-bold uppercase py-8 dark:text-gray-200">
+                Al{" "}
+                <span className="text-violet-700 dark:text-violet-500">Quran</span>
+              </h2>
+            </a>
+           
+         
           </div>
         </div>
         <div className="sm:flex sm:items-center lg:hidden  w-1/2 ">
