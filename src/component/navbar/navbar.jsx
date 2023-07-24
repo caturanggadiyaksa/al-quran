@@ -73,14 +73,14 @@ const Navbar = () => {
         </div>
         <nav className="xs:hidden sm:hidden lg:flex flex-row mr-6">
           <div className="mx-2 px-4  hover:border-violet-600 hover:border-b-4">
-            <a href="#portfolio">
+            {/* <a href="#portfolio">
               <h2 className="text-slate-800 pt-8 dark:text-gray-200">Portfolio</h2>
-            </a>
+            </a> */}
           </div>
           <div className="mx-2 px-4 hover:border-violet-600 hover:border-b-4">
-            <a href="#contact">
+            {/* <a href="#contact">
               <h2 className="text-slate-800 pt-8 dark:text-gray-200">Contact</h2>
-            </a>
+            </a> */}
           </div>
           <div className="mx-2 px-2 hover:border-violet-600 hover:border-b-4">
             <button
@@ -99,7 +99,7 @@ const Navbar = () => {
             >
               {isDarkMode ? (
                 <svg
-                  className="w-5 h-5 text-gray-400 dark:text-gray-700"
+                  className="w-5 h-5 text-gray-400 dark:text-gray-100"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
