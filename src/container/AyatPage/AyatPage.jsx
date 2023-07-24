@@ -44,7 +44,7 @@ const AyatPage = () => {
         <div className='m-4 pt-[6rem]'>
           {surah.map((surahItem) => (
             <div key={surahItem.id}>
-              <h2 className='m-4 text-gray-800 dark:text-gray-100'>{surahItem.id === parseInt(surah_number) ? surahItem.name : null}</h2>
+              <h2 className='m-4 text-xl font-semibold text-gray-800 dark:text-gray-100'>{surahItem.id === parseInt(surah_number) ? surahItem.name : null}</h2>
               {surahItem.id === parseInt(surah_number) ? surahItem.ayats.map((ayat) => (
                 <Ayat key={ayat.id} judul={ayat.isi_ayat} arti={ayat.translation} asma={ayat.text}/>
               )) : null}
