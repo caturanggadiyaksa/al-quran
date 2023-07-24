@@ -14,13 +14,13 @@ const Ayat = ({ judul, arti, asma }) => {
             <div className="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
             
               <div className="space-y-2">
-                <p className="text-slate-800">
+                <p className="text-slate-800 pb-4">
                   {judul}
                 </p>
                
                 <p dangerouslySetInnerHTML={{ __html: arti }}
                   
-                  className="block text-indigo-400 group-hover:text-slate-800 transition duration-200"
+                  className="pb-1 block text-slate-800 group-hover:text-indigo-400 transition duration-200"
                 >
                  
                 </p>
