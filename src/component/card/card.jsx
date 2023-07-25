@@ -10,7 +10,7 @@ const Card = ({ judul, arti, asma, surahNumber }) => {
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
               <div className="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
                 <div className='flex items-center'>
-                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-violet-500 text-white" alt="Avatar">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-violet-500 text-white" alt="Avatar">
                   <p>{ surahNumber }</p>
                 </div>
 
