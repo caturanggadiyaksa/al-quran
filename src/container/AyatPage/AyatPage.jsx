@@ -9,23 +9,16 @@ const AyatPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const apiKey = 'lcjYVLBQPueQNxivzTEeRgV7Kj9LN44NFg8chnal';
-    const apiUrl = 'https://api-quran.tretasoft.com/api/quran';
+    // Check if data exists in Local Storage
+    const storedQuranData = localStorage.getItem('surah');
 
-    fetch(apiUrl, {
-      headers: {
-        'API-Key': apiKey
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        setSurah(data);
-        setLoading(false); // Setelah data berhasil diambil, atur loading menjadi false
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        setLoading(false); // Setelah terjadi error, atur loading menjadi false
-      });
+    if (storedQuranData) {
+      // If data exists, parse and use it
+      setSurah(JSON.parse(storedQuranData));
+      setLoading(false);
+    } else {
+      setLoading(false); // No data in local storage, set loading to false
+    }
   }, []);
 
   // Tambahkan pengecekan apakah `surah_number` adalah angka
