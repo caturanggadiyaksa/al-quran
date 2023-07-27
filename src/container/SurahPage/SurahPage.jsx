@@ -1,7 +1,7 @@
 import React from 'react';
 import './SurahPage.css';
 import Card from '../../component/card/card';
-
+import BarComp from '../../component/BarComp/BarComp';
 
 class SurahPage extends React.Component {
 
@@ -59,19 +59,21 @@ class SurahPage extends React.Component {
     render() {
       const { surah, isLoading } = this.state;
         return (
-          <>
-           
+          <>          
+           <BarComp />
 
               {isLoading ? (
                 <div>Loading...</div>
               ) : surah ? (
                 // Render Quran data here
-                <div className="min-h-screen bg-gray-50 flex flex-col justify-center relative overflow-hidden sm:py-12 dark:bg-gray-800">
-                  <div className="pt-[6rem] grid grid-cols-1 gap-1 justify-center mx-4 md:grid md:grid-cols-2 md:gap-2 xl:grid xl:grid-cols-3 xl:gap-3">
+                <div className="min-h-screen bg-gray-50 flex flex-col justify-center relative overflow-hidden sm:py-8 dark:bg-gray-800">
+                  <div className=" grid grid-cols-1 gap-1 justify-center mx-4 md:grid md:grid-cols-2 md:gap-2 xl:grid xl:grid-cols-3 xl:gap-3">
              
                    {this.state.surah.map((surah) => (
                       <Card key={surah.id} judul={surah.name} arti={surah.arti} asma={surah.asma} surahNumber={surah.id} />
                     ))}
+
+                   
                   </div>
                 </div>
               ) : (
