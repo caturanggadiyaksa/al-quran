@@ -1,5 +1,5 @@
 
-const BarComp = () => {
+const BarComp = ({ surah, juz, bookmark }) => {
     return (
         <div className="pt-[6rem]">
             <div className="mt-10 mb-4 flex justify-center items-center">
@@ -8,7 +8,7 @@ const BarComp = () => {
                     <div className="w-[10rem]">
                         <a
                         className="flex flex-wrap justify-center items-center"
-                        href="website.html"
+                        href={ surah }
                         >
                        
                         <span className="hidden md:block">Surah</span>
@@ -17,7 +17,7 @@ const BarComp = () => {
                     <div className="w-[10rem]">
                         <a
                         className="flex flex-wrap justify-center items-center"
-                        href="pencapaian.html"
+                        href={ juz }
                         >
                         
                         <span className="hidden md:block">Juz</span>
@@ -26,7 +26,7 @@ const BarComp = () => {
                     <div className="w-[10rem]">
                         <a
                         className="flex flex-wrap justify-center items-center"
-                        href="portfolio.html"
+                        href={ bookmark }
                         >
                       
                         <span className="hidden md:block">Bookmark</span>
