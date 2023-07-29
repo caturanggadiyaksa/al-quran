@@ -15,7 +15,7 @@ class SurahPage extends React.Component {
 
     componentDidMount() {
       const apiKey = 'lcjYVLBQPueQNxivzTEeRgV7Kj9LN44NFg8chnal'; 
-      const apiUrl = 'https://api-quran.tretasoft.com/api/quran';
+      const apiUrl = 'http://127.0.0.1:8000/api/quran';
       
 
       // Check if data exists in Local Storage
@@ -42,6 +42,7 @@ class SurahPage extends React.Component {
             surah: data,
             isLoading: false,
           });
+       
           
           
         })
@@ -73,7 +74,7 @@ class SurahPage extends React.Component {
                   <div className=" grid grid-cols-1 gap-1 justify-center mx-4 md:grid md:grid-cols-2 md:gap-2 xl:grid xl:grid-cols-3 xl:gap-3">
              
                    {this.state.surah.map((surah) => (
-                      <Card key={surah.id} judul={surah.name} arti={surah.arti} asma={surah.asma} surahNumber={surah.id} />
+                      <Card key={surah.id} judul={surah.name} arti={surah.arti} asma={surah.asma} surahNumber={surah.id} totalAyat={surah.jumlah_ayat}/>
                     ))}
                    
 
