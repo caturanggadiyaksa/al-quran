@@ -18,3 +18,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'LPMQ IsepMisbah'; /* Ganti 'NamaFont' sesuai dengan nama font Anda */
+  src: url('../public/fonts/LPMQ\ IsepMisbah.ttf') format('truetype'); /* Ganti './fonts/NamaFont.ttf' sesuai dengan lokasi font Anda */
+  font-weight: normal;
+  font-style: normal;
+}
