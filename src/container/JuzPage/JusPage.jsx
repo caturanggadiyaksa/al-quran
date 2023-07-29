@@ -8,6 +8,7 @@ class JuzPage extends React.Component {
     super(props);
     this.state = {
       juz: null,
+      surah: null,
       isLoading: true,
     };
   }
@@ -19,13 +20,17 @@ class JuzPage extends React.Component {
 
       // Check if data exists in Local Storage
       const storedJuzData = localStorage.getItem('juz');
-
+      const storedSurahData = localStorage.getItem('surah');
+      
       if (storedJuzData) {
         // If data exists, parse and use it
         this.setState({
           juz: JSON.parse(storedJuzData),
+          surah: JSON.parse(storedSurahData),
           isLoading: false,
+        
         });
+       
       } else {
         fetch(apiUrl, {
           headers: {
@@ -55,6 +60,9 @@ class JuzPage extends React.Component {
       }
      
     }
+
+   
+    
     
     
     render() {
@@ -75,7 +83,8 @@ class JuzPage extends React.Component {
                         juz.map((juz) => (
                           
                           <div key={juz.id} className='w-[30%]'>
-                            <JuzComp  no_juz={juz.juz_number}  />
+                      
+                            <JuzComp  no_juz={juz.juz_number} surahNumber={juz.verse_mapping} />
                           </div>
                         ))
                       }
