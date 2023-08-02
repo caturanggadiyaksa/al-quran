@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import NotFound from '../NotFound';
 import LoaderComp from '../../component/LoaderComp/LoaderComp';
 
+
+
 const AyatPage = () => {
   const { surah_number } = useParams();
   const [surah, setSurah] = useState([]);
@@ -42,7 +44,7 @@ const AyatPage = () => {
                 </h2>
                 {surahItem.id === parseInt(surah_number)
                   ? surahItem.ayats.map((ayat) => (
-                      <Ayat key={ayat.id} judul={ayat.isi_ayat} arti={ayat.translation} asma={ayat.text} />
+                      <Ayat key={ayat.id} judul={ayat.isi_ayat} arti={ayat.translation} asma={ayat.text} nomor={ ayat.ayat_number } />
                     ))
                   : null}
               </div>
