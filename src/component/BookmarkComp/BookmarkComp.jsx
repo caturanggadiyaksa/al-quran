@@ -29,9 +29,12 @@ const BookmarkComp = () => {
     }, [data]); // Include 'data' in the dependency array
     
     return (
-        <div>
-            {/* Your JSX content goes here */}
-            {loading ? <p>Loading...</p> : <p>Bookmark Data: {JSON.stringify(bookmark)}</p>}
+        <div className='flex justify-center items-center'>
+
+            <div className="w-[80%] min-h-[5rem] bg-white p-4 rounded-lg border  border-slate-500 hover:border-blue-500 transition">
+               
+            </div>
+            {/* {loading ? <p>Loading...</p> : <p>Bookmark Data: {JSON.stringify(bookmark)}</p>} */}
         </div>
     );
 };
