@@ -9,7 +9,7 @@ const FileBookmark = ({data}) => {
          
        
 
-          <div className=" bg-white p-4 rounded-lg shadow-md w-[60%] min-h-[8rem] ">
+          <div className=" bg-white p-4 rounded-lg shadow-md w-[90%] md:w-[60%] min-h-[8rem] ">
         
             <div className="flex flex-col justify-center items-center ">
              <div className="w-full">
@@ -20,7 +20,17 @@ const FileBookmark = ({data}) => {
                 </div>
              </div>
               
-              <input type="text" placeholder="Enter folder name" />
+              
+              <p>Add To Bookmark</p>
+              <div className="mt-6">
+                <input type="text" placeholder="Enter folder name" />
+              </div>
+
+
+              <div className="mt-2">
+                <button>Save</button>
+              </div>
+            
             </div>
           </div>
         </div>
